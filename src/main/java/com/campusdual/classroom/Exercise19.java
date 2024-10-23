@@ -39,22 +39,22 @@ public class Exercise19 {
 
     //TODO
     public static int[][] flatTridimensionalArray(int[][][] intArrayTri) {
-
         int depth = intArrayTri.length;
         int rows = intArrayTri[0].length;
         int columns = intArrayTri[0][0].length;
 
+        int[][] flattened = new int[rows][columns];
 
-        int[][] flattened = new int[depth * rows][columns];
-
-
-        for (int i = 0; i < depth; i++) {
-            for (int j = 0; j < rows; j++) {
-                flattened[i * rows + j] = intArrayTri[i][j];
-            }
+        for (int j = 0; j < rows; j++) {
+            for (int k = 0; k < columns; k++) {
+                int sum = 0;
+                for (int i = 0; i < depth; i++) {
+                    sum += intArrayTri[i][j][k];
+                }
+                flattened[j][k] = sum;
         }
 
-        return flattened; // Devolver el arreglo aplanado
+        return flattened;
     }
 
 
