@@ -52,6 +52,7 @@ public class Exercise19 {
                     sum += intArrayTri[i][j][k];
                 }
                 flattened[j][k] = sum;
+            }
         }
 
         return flattened;
